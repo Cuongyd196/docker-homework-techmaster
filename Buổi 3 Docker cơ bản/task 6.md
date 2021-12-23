@@ -22,6 +22,11 @@
   apt-get update
   apt-get install iputils-ping
    ```
+- Từ bên trong container my-nginx, lần lượt chạy 2 lệnh: ping hello-whoami và curl hello-whoami:8000. Kiểm tra kết quả.
+    ```sh
+    ping hello-whoami
+    curl hello-whoami:8000 
+    ```
 
   -  Truy cập vào container hello-whoami
   ```sh
@@ -48,12 +53,7 @@
   ```sh
   apk add curl
   ```
-- Từ bên trong container my-nginx, lần lượt chạy 2 lệnh: ping hello-whoami và curl hellowhoami:8000. Kiểm tra kết quả.
-    ```sh
-    ping hello-whoami
-    curl hello-whoami:8000 
-    ```
-- Từ bên trong container hello-whoami, lần lượt chạy 2 lệnh: ping my-nginx và curl mynginx:80. Kiểm tra kết quả.
+- Từ bên trong container hello-whoami, lần lượt chạy 2 lệnh: ping my-nginx và curl my-nginx:80. Kiểm tra kết quả.
     ```sh
     ping my-nginx
     curl my-nginx:80

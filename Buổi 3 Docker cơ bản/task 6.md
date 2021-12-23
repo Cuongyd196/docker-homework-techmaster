@@ -13,46 +13,45 @@
     docker run --name hello-whoami --net=my-app -d jwilder/whoami
     ```
 - Docker exec vào 2 container my-nginx và hello-whoami, sau đó tiến hành cài 2 gói package ping và curl (nếu chưa có)
-  - Truy cập vào container my-nginx:
+ - Truy cập vào container my-nginx:
    ```sh
    docker exec -it my-nginx bash
    ```
-  - Nếu chưa có package ping và curl thì cài đặt
-  ```sh
-  apt-get update
-  apt-get install iputils-ping
-   ```
+   - Nếu chưa có package ping và curl thì cài đặt
+    ```sh
+      apt-get update
+      apt-get install iputils-ping
+    ```
 - Từ bên trong container my-nginx, lần lượt chạy 2 lệnh: ping hello-whoami và curl hello-whoami:8000. Kiểm tra kết quả.
     ```sh
     ping hello-whoami
     curl hello-whoami:8000 
     ```
-
 -  Truy cập vào container hello-whoami
-  ```sh
-  docker exec -it hello-whoami sh
-  ```
-  - Nếu chưa có package ping và curl thì cài đặt:
-  - Cập nhật apk:
-   ```sh
-   apk update
-   ```
-  -  Áp dụng tất cả các bản cập nhật bảo mật đang chờ xử lý trên Alpine Linux:
+      ```sh
+      docker exec -it hello-whoami sh
+      ```
+      - Nếu chưa có package ping và curl thì cài đặt:
+      - Cập nhật apk:
+      ```sh
+       apk update
+      ```
+    -  Áp dụng tất cả các bản cập nhật bảo mật đang chờ xử lý trên Alpine Linux:
    ```sh
    apk upgrade
    ```
-  - Tìm kiếm các curl packages trong Alpine:
-  ```sh
-  apk search curl
-  ```
-  - Liệt kê thông tin các gói có tên là curl
-  ```sh
-  apk -a info curl
-  ```
-  - Tiến hành cài đặt
-  ```sh
-  apk add curl
-  ```
+    - Tìm kiếm các curl packages trong Alpine:
+     ```sh
+      apk search curl
+    ```
+    - Liệt kê thông tin các gói có tên là curl
+     ```sh
+      apk -a info curl
+     ```
+    - Tiến hành cài đặt
+    ```sh
+     apk add curl
+     ```
 - Từ bên trong container hello-whoami, lần lượt chạy 2 lệnh: ping my-nginx và curl my-nginx:80. Kiểm tra kết quả.
     ```sh
     ping my-nginx

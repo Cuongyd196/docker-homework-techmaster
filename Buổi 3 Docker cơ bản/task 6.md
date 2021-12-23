@@ -28,7 +28,7 @@
     curl hello-whoami:8000 
     ```
 
-  -  Truy cập vào container hello-whoami
+-  Truy cập vào container hello-whoami
   ```sh
   docker exec -it hello-whoami sh
   ```

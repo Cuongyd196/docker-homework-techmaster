@@ -44,4 +44,4 @@ docker run -d --name golang \
 thuongnn1997/todo-app:latest
 ```
 
-#### Địa chỉ: 
+Địa chỉ kiểm tra: `http://45.76.186.96:8081/`

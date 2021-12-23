@@ -23,7 +23,7 @@ docker network create -d bridge todo-app
 - Câu lệnh:
 ```sh
 docker run -d --name postgresql \
---net=todo-app \ 
+--net=todo-app \
 -v /home/cuongit/docker-practice/Buoi3-Task7/data:/var/lib/postgresql/data \
 -e POSTGRES_USER=postgres \
 -e POSTGRES_PASSWORD=root123 \

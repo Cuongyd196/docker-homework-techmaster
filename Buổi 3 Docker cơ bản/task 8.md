@@ -47,5 +47,3 @@ docker run -d --name ghostblog \
 -p 80:2368 \
 ghost:alpine
 ```
-Địa chỉ kiểm tra: `http://45.76.186.96:80`
-

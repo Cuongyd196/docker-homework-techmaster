@@ -39,11 +39,11 @@ mysql:5.7
 ```sh
 docker run -d --name ghostblog \
 --net=ghost-network \
--e database__client = mysql
--e database__connection__host = db
--e database__connection__user = root
--e database__connection__password = example
--e database__connection__database = ghost
+-e database__client = mysql \
+-e database__connection__host = db \
+-e database__connection__user = root \
+-e database__connection__password = example \
+-e database__connection__database = ghost \
 -p 80:2368 \
 ghost:alpine
 ```

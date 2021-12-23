@@ -58,4 +58,4 @@
     ping my-nginx
     curl my-nginx:80
     ```
-#### => Kết quả cho thấy container ở trong cùng 1 mạng thì có thể kết nối tới nha bằng tên container.
+#### => Kết quả cho thấy container ở trong cùng 1 mạng thì có thể kết nối tới nhau bằng tên container.

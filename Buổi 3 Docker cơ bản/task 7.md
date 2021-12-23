@@ -1,9 +1,10 @@
 ## Task 7 yêu cầu
+```sh
 • Tạo một docker network có tên là todo-app
 • Chạy container PostgreSQL
 • Chạy container cho ứng dụng ToDo App
 • Kiểm tra kết quả
-
+```
 ### 1. Tạo một docker network có tên là todo-app
 ```sh
 docker network create -d bridge todo-app

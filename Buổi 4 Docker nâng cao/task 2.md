@@ -1,5 +1,4 @@
-## Task 2. Viết các lệnh docker thực hiện yêu cầu:
-- Yêu cầu
+## Task 2. Yêu cầu
 ```sh
 Cho source code của 1 ứng dụng React tại địa chỉ
 https://github.com/ahfarmer/calculator
@@ -15,4 +14,27 @@ Sử dụng base image node:12-alpine
 • Chạy lệnh npm install để download các thư viện dependencies
 • Copy toàn bộ file và thư mục từ host vào image
 • Viết lệnh CMD (tham khảo source code trên Github lệnh để chạy ứng dụng)
-    ```
+```
+### - Dockerfile:
+
+```sh
+FROM node:12.19.1-alpine3.10
+RUN apk add --update --no-cache \
+      autoconf \
+      libtool \
+      automake \
+      nasm \
+      gcc \
+      make \
+      g++ \
+      zlib-dev \
+      tzdata \
+      build-base
+      
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm install
+COPY . .
+EXPOSE 8080
+CMD [ "npm","start" ]
+```

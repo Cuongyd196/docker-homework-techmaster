@@ -29,7 +29,10 @@ COPY --from=build-step /app/dist /usr/share/nginx/html
 EXPOSE 8081
 CMD ["nginx", "-g", "daemon off;"]
 ```
-
+### - Build image:
+```sh
+docker build -t angular-app .
+```
 ### - Run container:
 ```sh
 docker run --name angular1 -d -p 8081:80 angular-app

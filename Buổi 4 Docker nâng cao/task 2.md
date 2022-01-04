@@ -38,3 +38,11 @@ COPY . .
 EXPOSE 8080
 CMD [ "npm","start" ]
 ```
+### - Build image:
+```sh
+docker build -t calculator .
+```
+### - Run container:
+```sh
+docker run --name calculator1 -d -p 8080:3000 calculator
+```

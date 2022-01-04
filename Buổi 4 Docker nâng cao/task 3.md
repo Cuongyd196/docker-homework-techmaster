@@ -3,9 +3,6 @@
 - Cho source code của ứng dụng https://github.com/handuy/angular-hero
 - Viết Dockerfile dưới dạng multi-stage, sau đó build ứng dụng thành Docker Image và khởi tạo container.
 ```
-```sh
-
-```
 ### - Dockerfile:
 ```sh
 FROM node:13-alpine as build-step
@@ -29,6 +26,7 @@ RUN npm run build
 
 FROM nginx:1.17-alpine
 COPY --from=build-step /app/dist /usr/share/nginx/html
+EXPOSE 8081
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
